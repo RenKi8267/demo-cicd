@@ -31,7 +31,9 @@ pipeline {
                 if [ ! -z "$APP" ]; then
                   kill -9 $APP
                 fi
-                setsid java -jar target/*.jar > app.log 2>&1 < /dev/null &
+                nohup java -jar target/*.jar > app.log 2>&1 &
+                disown
+                echo "Spring Boot started on port 9097"
                 '''
             }
         }
