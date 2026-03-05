@@ -15,4 +15,9 @@ public class TestController {
     public String ping() {
         return "test ping";
     }
+
+    @GetMapping("/ping-merge")
+    public String pingTestMerge() {
+        return "test merge";
+    }
 }
