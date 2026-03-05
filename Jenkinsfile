@@ -31,7 +31,7 @@ pipeline {
                 if [ ! -z "$APP" ]; then
                   kill -9 $APP
                 fi
-                nohup java -jar target/*.jar > app.log 2>&1 &
+                setsid java -jar target/*.jar > app.log 2>&1 < /dev/null &
                 '''
             }
         }
